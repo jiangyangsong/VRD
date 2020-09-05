@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" value="发出异步请求">
+<script src="bootstrap3/jquery.min.js"></script>
+<script>
+    $("input").click(function () {
+        //发出异步请求
+        $.ajax({
+            type:"get", //请求方式 get/post
+            url:"hello", //请求路径
+            data:"info=Hello Ajax!", //请求参数
+            success:function (msg) { //请求完成后 执行的方法
+                alert(msg); //msg 服务器返回的内容 变量名可以更换
+            }
+        });
+    });
+</script>
+</body>
+</html>
